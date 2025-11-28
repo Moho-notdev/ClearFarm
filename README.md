@@ -17,7 +17,7 @@ Ogni cassa di prodotti genera un token digitale che registra le operazioni effet
 ---
 
 ##  Tecnologie utilizzate
-- Python 3.12
+- Python 3.13
 - Web3.py per interazione con Avalanche
 - Requests per chiamate API
 - Avalanche Fuji Testnet (solo test, AVAX finti)
