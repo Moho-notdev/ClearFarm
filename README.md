@@ -1,24 +1,66 @@
-# ClearFarm
+## Foundry
 
-**Progetto Hackathon: Supply Chain Trasparente per Ortaggi su Blockchain**
+**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
 
-ClearFarm è un prototipo di sistema che permette di tracciare ortaggi dalla semina fino al cliente finale usando la blockchain Avalanche.  
-Ogni cassa di prodotti genera un token digitale che registra le operazioni effettuate e il passaggio di proprietà, garantendo trasparenza e sicurezza.
+Foundry consists of:
 
----
+- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
+- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
+- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
+- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
 
-##  Funzionalità principali
-- Creazione di una cassa con ID unico
-- Registrazione delle operazioni: semina, irrigazione, trattamenti, raccolta
-- Passaggio di proprietà della cassa
-- Dati pubblici visibili a tutti, dati dettagliati visibili solo al proprietario
-- Hash immutabile dei dati salvato su Avalanche Testnet
+## Documentation
 
----
+https://book.getfoundry.sh/
 
-##  Tecnologie utilizzate
-- Python 3.13
-- Web3.py per interazione con Avalanche
-- Requests per chiamate API
-- Avalanche Fuji Testnet (solo test, AVAX finti)
-- Virtual Environment (venv) per gestione librerie
+## Usage
+
+### Build
+
+```shell
+$ forge build
+```
+
+### Test
+
+```shell
+$ forge test
+```
+
+### Format
+
+```shell
+$ forge fmt
+```
+
+### Gas Snapshots
+
+```shell
+$ forge snapshot
+```
+
+### Anvil
+
+```shell
+$ anvil
+```
+
+### Deploy
+
+```shell
+$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```
+
+### Cast
+
+```shell
+$ cast <subcommand>
+```
+
+### Help
+
+```shell
+$ forge --help
+$ anvil --help
+$ cast --help
+```
