@@ -43,3 +43,18 @@ def water_plot(plot_id, amount):
 
 def get_plot(plot_id):
     return contract.functions.getPlot(plot_id).call()
+
+def transfer_plot(plot_id, new_owner):
+    acct = w3.eth.account.from_key(PRIVATE_KEY)
+    tx = contract.functions.transferPlot(plot_id, new_owner).buildTransaction({
+        "from": acct.address,
+        "nonce": w3.eth.get_transaction_count(acct.address),
+        "gas": 200000,
+        "gasPrice": w3.eth.gas_price,
+        "chainId": CHAIN_ID,
+    })
+    signed = acct.sign_transaction(tx)
+    tx_hash = w3.eth.send_raw_transaction(signed.rawTransaction)
+    receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
+    print(f"Plot {plot_id} trasferito a {new_owner}, tx: {tx_hash.hex()}")
+    return receipt
